@@ -1,0 +1,114 @@
+.toast-container {
+    min-width: 350px;
+    height: 100vh;
+    position: fixed;
+    right: 0;
+}
+
+.alert-wraper {
+    transition: 0.1s;
+}
+
+.alert {
+    position: relative;
+    overflow: hidden;
+    margin: 15px;
+    list-style: none;
+    animation: slideIn 0.5s;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    box-shadow:
+        0 2.8px 2.2px rgba(0, 0, 0, 0.02),
+        0 6.7px 5.3px rgba(0, 0, 0, 0.028),
+        0 12.5px 10px rgba(0, 0, 0, 0.035),
+        0 22.3px 17.9px rgba(0, 0, 0, 0.042),
+        0 41.8px 33.4px rgba(0, 0, 0, 0.05),
+        0 100px 80px rgba(0, 0, 0, 0.07)
+    ;
+
+}
+
+.alert-out {
+    animation: slideOut 1s;
+}
+
+.alert button {
+    background: none;
+    border: none;
+    outline: none;
+    position: absolute;
+    right: 5px;
+}
+
+.alert-container {
+    padding: 20px;
+}
+
+
+.alert progress {
+    width: 100%;
+    max-height: 8px;
+    border: 0;
+}
+
+
+.success {
+    background-color: green;
+    color: white;
+}
+
+.error {
+    background-color: red;
+    color: white;
+}
+
+.success progress::-webkit-progress-value {
+    background: rgb(0, 71, 0);
+}
+
+.success progress::-webkit-progress-bar {
+    background: none;
+}
+
+.error progress::-webkit-progress-value {
+    background: rgb(129, 1, 1);
+}
+
+.error progress::-webkit-progress-bar {
+    background: none;
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(400px);
+    }
+
+    55% {
+        transform: translateX(-30px);
+    }
+
+    75% {
+        transform: translateX(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOut {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-20px);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(400px);
+    }
+}
